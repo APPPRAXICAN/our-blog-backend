@@ -79,4 +79,8 @@ class Post extends Model
     public function reactions(){
         return $this->morphMany('App\Models\Reaction' , 'reactionable');
     }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
 }
