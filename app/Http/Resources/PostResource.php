@@ -25,8 +25,6 @@ class PostResource extends JsonResource
             "slug" => $this->slug,
             "title" => $this->title,
             "attachment" => $this->attachment,
-            "created_at" => $this->created_at,
-            "updated_at" => $this->updated_at,
             "user" => UserResource::make($this->user),
             "category" => CategoryResource::make($this->category),
             "since" => $since,
