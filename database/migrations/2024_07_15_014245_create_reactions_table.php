@@ -16,6 +16,7 @@ return new class extends Migration
             $table->integer('reactionable_id')->unsigned();
             $table->string('reactionable_type');
             $table->char('reaction');
+            $table->foreignIdFor(\App\Models\User::class);
             $table->timestamps();
         });
     }
