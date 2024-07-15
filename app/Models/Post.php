@@ -75,4 +75,8 @@ class Post extends Model
     {
         return $this->BelongsToMany(Tag::class);
     }
+
+    public function reactions(){
+        return $this->morphMany('App\Models\Reaction' , 'reactionable');
+    }
 }
