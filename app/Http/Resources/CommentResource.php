@@ -23,7 +23,7 @@ class CommentResource extends JsonResource
             'text'=> $this->text ,
             'since' => $since,
             'user' => UserResource::make($this->user),
-            'post' => PostResource::make($this->post),
+//            'post' => PostResource::make($this->post),
             'replay_to' => CommentResource::make(Comment::find($this->parent_id)),
             'reactions' => ReactionResource::collection($this->reactions),
         ];

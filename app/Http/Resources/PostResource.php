@@ -21,12 +21,15 @@ class PostResource extends JsonResource
         $since = $post_dt->diffForHumans(Carbon::now());
         $since = str_replace('before' , 'ago' , $since);
 
+
+
         $data = [
             "slug" => $this->slug,
             "title" => $this->title,
             "attachment" => $this->attachment,
             "user" => UserResource::make($this->user),
             "category" => CategoryResource::make($this->category),
+            "comments" => CommentResource::collection($this->comments),
             "since" => $since,
             "tags" => $this->tags->select(['name', 'slug', 'color'])
         ];
