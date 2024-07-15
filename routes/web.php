@@ -22,7 +22,8 @@ Route::get('/search' , function(Request $r){
         );
 
 });
-
+Route::resource('/comments',\App\Http\Controllers\CommentController::class);
+Route::resource('/reactions' , \App\Http\Controllers\ReactionController::class);
 
 
 require __DIR__ . '/auth.php';
