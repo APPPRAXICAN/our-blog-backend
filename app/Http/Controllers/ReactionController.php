@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ReactionResource;
+use App\Models\Reaction;
 use Illuminate\Http\Request;
 
 class ReactionController extends Controller
@@ -11,7 +13,7 @@ class ReactionController extends Controller
      */
     public function index()
     {
-        //
+       return ReactionResource::collection(Reaction::all());
     }
 
     /**
